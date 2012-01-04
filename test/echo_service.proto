@@ -1,0 +1,17 @@
+// Copyright 2009 Netease Inc. All Rights Reserved.
+// Author: tangxiliu@corp.netease.com (Tang Xi Liu)
+
+option cc_generic_services = true;
+option py_generic_services = true;
+
+message EchoRequest {
+  required int32 i = 1;
+}
+
+message EchoResponse {
+  required int32 echoed = 1;
+}
+
+service EchoService {
+  rpc Echo(EchoRequest) returns (EchoResponse);
+}

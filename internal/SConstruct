@@ -1,0 +1,6 @@
+env = DefaultEnvironment()
+env.Append(CPPPATH=['/usr/local/include/python2.7/'])
+env.Append(CFLAGS=' -Wall -O2')
+
+env.SharedLibrary('_internal.so', ['internal.c', 'lookup8.c'],
+                  SHLIBPREFIX='')
