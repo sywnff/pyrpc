@@ -1,0 +1,18 @@
+INTRODUCTION
+
+Pyrpc is one small implementation of google protobuf RPC, programing by python. It may be used for building server prototype rapidly, only need write the implementation class of rpc service, and list it in the server_setting.py.
+
+On the server side, pyrpc uses epoll to dispatch network I/O events, supporting multi-thread. The thread model is one epoll dispatcher per thread.
+On client side, pyrpc generates proxy automatically, using synchronized call.
+See test/echo_service.py, test/test_client.py for usage.
+
+Best regards.
+
+
+Pyrpc 是python语言编写的一个google protobuf RPC 小型实现，完整实现了RPC 服务端和客户端，只需要 service 接口实现类在 server_setting.py 中注册即可搭建服务，方便快速建立服务原型。
+
+在服务端，采用epoll作为网络I/O 时间分派处理，支持多线程并发，线程模型为每线程独立dispatcher (一个epoll事件调度处理器)；
+在客户端，pyrpc 自动生成调用代理，采用同步调用模型；
+具体用法参见 test/echo_service.py 和 test/test_client.py.
+
+敬请赐教。
